@@ -1,8 +1,78 @@
 body {
     margin: 0 auto;
-    background-color: rgb(172, 172, 172);
+    background-color: rgb(212, 211, 211);
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 header {
     text-align: center;
+}
+
+#quick-view-cards {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:20px;
+    max-width:80%;
+    justify-self: center;
+    margin: 2rem auto;
+    grid-template-areas: "A A A B B"
+                         "C C D D D"
+                         "E E E E E"
+}
+
+
+.quick-card-A {
+    grid-area: A;
+    background-color:rgb(236, 236, 236);
+    border:2px dashed rgb(185, 185, 185);
+    border-radius:5px;
+    padding: 20px 20px;
+}
+
+.quick-card-B {
+    grid-area: B;
+    background-color:rgb(196, 196, 196);
+    border:2px dashed rgb(185, 185, 185);
+    border-radius:5px;
+    padding: 20px 20px;
+}
+
+.quick-card-C {
+    grid-area: C;
+    background-color:rgb(196, 196, 196);
+    border:2px dashed rgb(185, 185, 185);
+    border-radius:5px;
+    padding: 20px 20px;
+}
+
+.quick-card-D {
+    grid-area: D;
+    background-color:rgb(236, 236, 236);
+    border:2px dashed rgb(185, 185, 185);
+    border-radius:5px;
+    padding: 20px 20px;
+}
+
+#prompt-card {
+    grid-area: E;
+    background-color:rgb(212, 211, 211);
+    border:2px dashed rgb(185, 185, 185);
+    border-radius:5px;
+    padding: 20px 20px;
+    text-align:center;
+
+}
+
+#full-cards {
+    margin-left:100px;
+    margin-right:100px;
+    border:2px solid black;
+    padding:20px 20px;
+}
+
+.vault-card {
+    background-color:rgb(213, 213, 213);
+    border:2px solid black;
+    padding:20px 20px;
+    margin-top:20px;
 }
