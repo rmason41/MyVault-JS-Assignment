@@ -18,6 +18,31 @@
             </nav>
         </div>
     </header>
+    <section>
+        
+         <form id="form-container">
+            <div id="current_date">
+                <script>
+                    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    const date = new Date();
+                    const dayName = daysOfWeek[date.getDay()];
+                    const monthName = months[date.getMonth()];
+                    day = date.getDate();
+                    year = date.getFullYear();
+
+                    document.getElementById("current_date").innerHTML = `${dayName}, ${monthName}` + " " + day + " " + year;
+                </script>
+            </div>
+            <input id="reflection-title" type="text" placeholder="Untitled Reflection" required>
+                <br/>
+            <textarea id="entry-area" placeholder="Begin your reflection..." rows="15" cols="100" required></textarea>
+                <br/>
+            <button id="discard" type="button">Discard</button>
+            <button id="save-entry" type="submit">Save Entry</button>
+         </form>
+         <script src="newEntryScript.js"></script>
+    </section>
     
 </body>
 </html>
