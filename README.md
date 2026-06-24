@@ -1,1 +1,6 @@
 "# MyVault-JS-Assignment" 
+" MDN localStorage page: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+" To implement use of the local storage I set the object "STORAGE_KEY" as 'reflections' so that entries made in the text area would be saved via localStorage.setItem, then used JSON.stringify to set the entered data as a string."
+"In order to retrieve that data I used the JSON.parse method and localStorage.getItem"
+"To render the entries, I used the loadReflections function as well as a recentItems object that was sliced using storedReflections.slice(-4) parameter so that only the most recent entries appear on the index page."
+"The data was then mapped onto a quick-card which was coded with CSS to properly show the data."
