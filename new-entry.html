@@ -33,13 +33,22 @@
 
                     document.getElementById("current_date").innerHTML = `${dayName}, ${monthName}` + " " + day + " " + year;
                 </script>
+                <br/><br/>
             </div>
             <input id="reflection-title" type="text" placeholder="Untitled Reflection" required>
                 <br/>
-            <textarea id="entry-area" placeholder="Begin your reflection..." rows="15" cols="100" required></textarea>
+            <textarea id="entry-area" placeholder="Begin your reflection..." rows="20" cols="100" required></textarea>
                 <br/>
-            <button id="discard" type="button">Discard</button>
-            <button id="save-entry" type="submit">Save Entry</button>
+            <div id="entry-buttons">   
+            <div id="img/privacy">
+                <button id="add-img" type="button"><i class="fa-solid fa-image"></i>Insert Memory</button>
+                <button id="privacy" type="button"><i class="fa-solid fa-lock"></i>Private</button>
+            </div>    
+            <div id="button-container">
+                <button id="discard" type="button">Discard</button>
+                <button id="save-entry" type="submit">Save Entry</button>
+            </div>
+            </div> 
          </form>
          <script src="newEntryScript.js"></script>
     </section>
