@@ -1,7 +1,14 @@
+html, body {
+    height: 100%;
+}
+
 body {
-    margin: 0 auto;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(212, 211, 211);
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -39,9 +46,9 @@ nav a:hover {
 }
 
 .top-intro {
-    max-width:80%;
-    display:flexbox;
-    margin:0 auto;
+    width: 100%;
+    max-width:70%;
+    margin: 2rem auto 0 auto;
 }
 
 .top-intro p {
@@ -52,55 +59,73 @@ nav a:hover {
     display:grid;
     grid-template-columns: repeat(5, 1fr);
     gap:20px;
-    max-width:80%;
+    max-width:70%;
+    width: 100%;
     justify-self: center;
     margin: 2rem auto;
-    grid-template-areas: "A A A B B"
-                         "C C D D D"
-                         "E E E E E"
-                         "F F F F F"
+    grid-template-areas:
+        "A A A B B"
+        "C C D D D"
+        "E E E E E"
+        "F F F F F";
+}
+
+#recent-entries {
+    grid-row: 1 / 4;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.quick-card {
+    
+    border:2px dashed rgb(185, 185, 185);
+    border-radius:5px;
+    padding: 20px;
+    min-height: 180px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 12px;
+}
+
+.quick-card:nth-child(5n+1) {
+    grid-column: 1 / span 3;
+    background-color:rgb(236, 236, 236);
+}
+
+.quick-card:nth-child(5n+2) {
+    grid-column: 4 / span 2;
+    background-color:rgb(206, 205, 205);
+}
+
+.quick-card:nth-child(5n+3) {
+    grid-column: 1 / span 2;
+    background-color:rgb(206, 205, 205);
+}
+
+.quick-card:nth-child(5n+4) {
+    grid-column: 3 / span 3;
+    background-color:rgb(236, 236, 236);
 }
 
 
-.quick-card-A {
-    grid-area: A;
+
+.quick-card h2 {
+    margin: 0.5rem 0;
+}
+
+.quick-card-empty {
+    grid-column: 1 / -1;
     background-color:rgb(236, 236, 236);
     border:2px dashed rgb(185, 185, 185);
     border-radius:5px;
-    padding: 20px 20px;
+    padding: 20px;
+    text-align: center;
 }
 
-.quick-card-B {
-    grid-area: B;
-    background-color:rgb(196, 196, 196);
-    border:2px dashed rgb(185, 185, 185);
-    border-radius:5px;
-    padding: 20px 20px;
-}
 
-.quick-card-C {
-    grid-area: C;
-    background-color:rgb(196, 196, 196);
-    border:2px dashed rgb(185, 185, 185);
-    border-radius:5px;
-    padding: 20px 20px;
-}
-
-.quick-card-D {
-    grid-area: D;
-    background-color:rgb(236, 236, 236);
-    border:2px dashed rgb(185, 185, 185);
-    border-radius:5px;
-    padding: 20px 20px;
-}
-
-.quick-card-E {
-    grid-area: E;
-    background-color:rgb(236, 236, 236);
-    border:2px dashed rgb(185, 185, 185);
-    border-radius:5px;
-    padding: 20px 20px;
-}
 
 #prompt-card {
     grid-area: F;
@@ -113,7 +138,8 @@ nav a:hover {
 }
 
 #full-cards {
-    max-width:80%;
+    width: 100%;
+    max-width: 80%;
     margin:0 auto;
     padding:20px 20px;
 }
@@ -131,12 +157,14 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items:center;
-    height: 3rem;
+    min-height: 3rem;
+    padding: 0 20px;
     color:rgb(110, 111, 111);
+    width: 100%;
 }
 
 #copyright {
-    margin-left: 20px;
+    margin: 0;
 }
 
 .bottom-links a {
@@ -144,6 +172,10 @@ nav a:hover {
     margin-right:20px;
     color:rgb(110, 111, 111);
     text-decoration:none;
+}
+
+#current_date {
+    color:rgb(110, 111, 111);
 }
 
 #entryForm {
@@ -161,4 +193,36 @@ nav a:hover {
     border:none;
     background-color: rgb(212, 211, 211);
     margin-top: 20px;
+}
+
+#discard {
+    background-color: rgb(184, 183, 183);
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 60px;
+    margin-right: 20px;
+}
+
+#discard:hover {
+    background-color:rgb(212, 211, 211);
+    border: 1px solid black;
+}
+
+#save-entry {
+ background-color: rgb(184, 183, 183); 
+ border: none; 
+ border-radius: 5px;
+ height: 25px;
+ width: 90px; 
+}
+
+#save-entry:hover {
+    background-color:rgb(212, 211, 211);
+    border: 1px solid black;
+}
+
+#footer-container {
+ position:relative;
+ bottom: 0;
 }
